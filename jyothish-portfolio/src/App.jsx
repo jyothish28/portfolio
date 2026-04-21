@@ -93,7 +93,7 @@ export default function JyothishPortfolio() {
       data.append('attachment', formData.attachment);
     }
 
-    const response = await fetch('http://localhost:5000/api/contact', {
+    const response = await fetch('https://portfolio-mrgs.onrender.com/api/contact', {
       method: 'POST',
       body: data,
     });

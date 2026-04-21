@@ -7,7 +7,15 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://your-frontend-domain.vercel.app',
+    ],
+    methods: ['GET', 'POST'],
+  })
+);
 app.use(express.json());
 
 // Store uploaded files temporarily
@@ -70,8 +78,6 @@ app.post('/api/contact', upload.single('attachment'), async (req, res) => {
   }
 });
 
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

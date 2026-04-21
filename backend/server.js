@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'https://your-frontend-domain.vercel.app',
+      'https://portfolio-snowy-nu-14.vercel.app/',
     ],
     methods: ['GET', 'POST'],
   })
